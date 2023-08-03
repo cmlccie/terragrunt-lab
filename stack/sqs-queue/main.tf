@@ -29,7 +29,7 @@ resource "random_string" "deployment_id" {
 # --------------------------------------------------------------------------------------
 
 resource "aws_sqs_queue" "fifo_queue" {
-  name                        = "${var.env_name}-${var.env_tier}-${var.queue_name}-${local.deployment_id}"
+  name                        = "${var.env_name}-${var.env_tier}-${var.queue_name}-${local.deployment_id}.fifo"
   fifo_queue                  = true
   content_based_deduplication = true
 }
